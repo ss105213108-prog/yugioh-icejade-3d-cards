@@ -11,6 +11,14 @@ export const ATTRIBUTES = {
   TRAP: 'TRAP',
 };
 
+// Helper function to resolve relative image paths across environments (localhost & GitHub Pages)
+const getImageUrl = (path) => {
+  const base = import.meta.env.BASE_URL || './';
+  const cleanBase = base.endsWith('/') ? base : base + '/';
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return cleanBase + cleanPath;
+};
+
 export const ICEJADE_CARDS = [
   {
     id: 'gymir-aegirine',
@@ -27,9 +35,9 @@ export const ICEJADE_CARDS = [
     def: 1500,
     rarity: 'Secret Rare (秘鑽 / 鐳射)',
     frameType: 'synchro', // White frame
-    image: '/images/icejade_gymir_aegirine.png',
-    bgImage: '/images/icejade_enion_cradle.png',
-    fgParticles: '/images/icejade_foreground_particles.png',
+    image: getImageUrl('images/icejade_gymir_aegirine.png'),
+    bgImage: getImageUrl('images/icejade_enion_cradle.png'),
+    fgParticles: getImageUrl('images/icejade_foreground_particles.png'),
     description: `水族協調＋協調以外的怪獸1隻以上
 此卡名的①②效果1回合各能使用1次。
 ①：以自己·對手回合可以發動。這個回合，自己場上的表側表示怪獸不會被對手的效果破壞，也不會被對手的效果除外。連鎖對手的效果的發動發動此效果，且該同名卡在對手的場上·墓地存在的場合，可以進一步將那些同名卡全部除外。
@@ -52,9 +60,9 @@ export const ICEJADE_CARDS = [
     def: 1500,
     rarity: 'Super Rare (亮面)',
     frameType: 'effect', // Orange/Brown frame
-    image: '/images/icejade_aegirine.png',
-    bgImage: '/images/icejade_enion_cradle.png',
-    fgParticles: '/images/icejade_foreground_particles.png',
+    image: getImageUrl('images/icejade_aegirine.png'),
+    bgImage: getImageUrl('images/icejade_enion_cradle.png'),
+    fgParticles: getImageUrl('images/icejade_foreground_particles.png'),
     description: `此卡名的①②效果1回合各能使用1次。
 ①：這張卡召喚·特殊召喚成功的場合可以發動。從牌組將1張「冰水」魔法·陷阱卡加入手牌。
 ②：這張卡成為對手的效果標的時，或成為對手怪獸的攻擊標的時可以發動。從自己的手牌·墓地選這張卡以外的1隻水屬性怪獸特殊召喚。此效果特殊召喚的怪獸在結束階段回到持有者手牌。這回合，這張卡不會被戰鬥·效果破壞。`,
@@ -76,9 +84,9 @@ export const ICEJADE_CARDS = [
     def: 3000,
     rarity: 'Ultra Rare (金字亮面)',
     frameType: 'effect',
-    image: '/images/icejade_kosmochlor.png',
-    bgImage: '/images/icejade_enion_cradle.png',
-    fgParticles: '/images/icejade_foreground_particles.png',
+    image: getImageUrl('images/icejade_kosmochlor.png'),
+    bgImage: getImageUrl('images/icejade_enion_cradle.png'),
+    fgParticles: getImageUrl('images/icejade_foreground_particles.png'),
     description: `此卡名的①方法的特殊召喚1回合只能有1次。
 ①：場上有區域魔法卡存在的場合，這張卡可以從手牌特殊召喚。
 ②：只要場上有「冰水底 搖籃」存在，對手場上的怪獸只能在召喚·特殊召喚的回合發動效果。
@@ -97,9 +105,9 @@ export const ICEJADE_CARDS = [
     spellTrapType: '【場地魔法】',
     rarity: 'Super Rare (亮面)',
     frameType: 'spell', // Teal frame
-    image: '/images/icejade_enion_cradle.png',
-    bgImage: '/images/icejade_enion_cradle.png',
-    fgParticles: '/images/icejade_foreground_particles.png',
+    image: getImageUrl('images/icejade_enion_cradle.png'),
+    bgImage: getImageUrl('images/icejade_enion_cradle.png'),
+    fgParticles: getImageUrl('images/icejade_foreground_particles.png'),
     description: `此卡名的卡1回合只能發動1張，此卡名的③效果1回合只能使用1次。
 ①：作為這張卡發動時的效果處理，可以從自己墓地的怪獸以及除外的自己怪獸中選1隻「冰水」怪獸加入手牌。
 ②：場上的怪獸的攻擊力下降除外中的怪獸數量×100。
@@ -117,9 +125,9 @@ export const ICEJADE_CARDS = [
     spellTrapType: '【永續陷阱】',
     rarity: 'Rare (銀字)',
     frameType: 'trap', // Magenta frame
-    image: '/images/icejade_erosion.png',
-    bgImage: '/images/icejade_enion_cradle.png',
-    fgParticles: '/images/icejade_foreground_particles.png',
+    image: getImageUrl('images/icejade_erosion.png'),
+    bgImage: getImageUrl('images/icejade_enion_cradle.png'),
+    fgParticles: getImageUrl('images/icejade_foreground_particles.png'),
     description: `此卡名的①②效果1回合各能使用1次。
 ①：以對手場上1張表側表示的卡為標的可以發動。自己場上選1隻「冰水」怪獸破壞，標的的卡的效果直到回合結束時無效。
 ②：自己場上的表側表示水屬性怪獸因破壞以外的方法離場的場合可以發動。從牌組選1隻「冰水」怪獸加入手牌或特殊召喚。`,
@@ -136,9 +144,9 @@ export const ICEJADE_CARDS = [
     spellTrapType: '【永續魔法】',
     rarity: 'Rare (銀字)',
     frameType: 'spell',
-    image: '/images/icejade_enion_cradle.png',
-    bgImage: '/images/icejade_enion_cradle.png',
-    fgParticles: '/images/icejade_foreground_particles.png',
+    image: getImageUrl('images/icejade_enion_cradle.png'),
+    bgImage: getImageUrl('images/icejade_enion_cradle.png'),
+    fgParticles: getImageUrl('images/icejade_foreground_particles.png'),
     description: `此卡名的②效果1回合只能使用1次。
 ①：只要場上有「冰水」怪獸以及「冰水底 搖籃」存在，對手發動該回合召喚·特殊召喚的怪獸的效果時，該怪獸破壞。
 ②：自己場上的「冰水」怪獸因戰鬥破壞對手怪獸時，以該1隻被破壞的對手怪獸為標的可以發動。給予對手該怪獸原本攻擊力數值的傷害。`,
