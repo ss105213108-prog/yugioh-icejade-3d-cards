@@ -1,5 +1,7 @@
 # 遊戲王「冰水 (Icejade)」主題 3D 立體卡牌展演庫 🎴❄️
 
+👉 **[🌐 點此線上體驗 3D 卡牌展演系統 (Live Demo)](https://ss105213108-prog.github.io/yugioh-icejade-3d-cards/)**
+
 一個使用 **React + Vite + Tailwind CSS** 打造的遊戲王 (Yu-Gi-Oh!)「冰水 (Icejade)」主題純前端卡牌展示系統。具備高質感遊戲王經典卡面、白色同步怪獸卡面、點擊 3D 多圖層視差懸浮與動態鐳射閃卡 (Secret Rare Holographic Sheen) 光澤與原生 Web Audio 冰晶音效！
 
 ![Icejade Card Showcase](public/images/icejade_gymir_aegirine.png)
